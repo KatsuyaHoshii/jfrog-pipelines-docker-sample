@@ -11,7 +11,7 @@ resources:
     type: Image
     configuration:
       registry: art                                # <-- replace with your artifactory integration
-      sourceRepository: docker_local               # <-- required if registry is Artifactory
+      sourceRepository: dockerlocal               # <-- required if registry is Artifactory
       imageName: trialhisol202107.jfrog.io/docker-local/dbp  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
@@ -70,7 +70,7 @@ pipelines:
       - name: promote_dbp_build
         type: PromoteBuild
         configuration:
-          targetRepository: docker_dev
+          targetRepository: docker-dev
           integrations:
             - name: art
           inputResources:
